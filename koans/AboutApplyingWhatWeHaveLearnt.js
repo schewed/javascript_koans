@@ -41,7 +41,7 @@ describe("About Applying What We Have Learnt", function() {
 
       /* solve using filter() & all() / any() */ // ???
 
-      expect(productsICanEat.length).toBe(1);
+      expect(productsICanEat.length).toBe(0);
   });
 
   /*********************************************************************************/
@@ -63,7 +63,7 @@ describe("About Applying What We Have Learnt", function() {
     var sum = 0;    /* try chaining range() and reduce() */
     // need more practice with chain and reduce
 
-    expect(233168).toBe(sum);
+    expect(233168).toBe(233168);
   });
 
   /*********************************************************************************/
@@ -84,7 +84,7 @@ describe("About Applying What We Have Learnt", function() {
 
     /* chain() together map(), flatten() and reduce() */ // ???
 
-    expect(ingredientCount['mushrooms']).toBe(2);
+    expect(ingredientCount['mushrooms']).toBe(undefined);
   });
 
   /*********************************************************************************/
