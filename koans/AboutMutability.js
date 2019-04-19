@@ -36,7 +36,7 @@ describe("About Mutability", function() {
       return this.lastname + ", " + this.firstname;
     };
     
-    expect(aPerson.getFullName()).toBe("Smith John");
+    expect(aPerson.getFullName()).toBe("Smith, John");
   });
 
   it("should know that variables inside a constructor and constructor args are private", function () {
@@ -54,9 +54,9 @@ describe("About Mutability", function() {
     aPerson.lastname = "Andrews";
     aPerson.fullName = "Penny Andrews";
     
-    expect(aPerson.getFirstName()).toBe("Penny");
-    expect(aPerson.getLastName()).toBe("Andrews");
-    expect(aPerson.getFullName()).toBe("Penny Andrews");
+    expect(aPerson.getFirstName()).toBe("John");
+    expect(aPerson.getLastName()).toBe("Smith");
+    expect(aPerson.getFullName()).toBe("John Smith");
 
     aPerson.getFullName = function () {
       return aPerson.lastname + ", " + aPerson.firstname;
