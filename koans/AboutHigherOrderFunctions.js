@@ -11,7 +11,7 @@ describe("About Higher Order Functions", function () {
     var numbers = [1,2,3];
     var odd = _(numbers).filter(function (x) { return x % 2 !== 0 });
     
-    expect(odd).toEqual(1, 3);
+    expect(odd).toEqual([1, 3]);
     expect(odd.length).toBe(2);
     expect(numbers.length).toBe(3);
   });
@@ -20,8 +20,8 @@ describe("About Higher Order Functions", function () {
     var numbers = [1, 2, 3];
     var numbersPlus1 = _(numbers).map(function(x) { return x + 1 });
     
-    expect(numbersPlus1).toEqual(2, 3, 4);
-    expect(numbers).toEqual(1, 2, 3);
+    expect(numbersPlus1).toEqual([2, 3, 4]);
+    expect(numbers).toEqual([1, 2, 3]);
   });
     
   it("should use 'reduce' to update the same result on each iteration", function () { // need help understanding reduce()
@@ -35,7 +35,7 @@ describe("About Higher Order Functions", function () {
     );
     
     expect(reduction).toBe(6);
-    expect(numbers).toEqual(6);
+    expect(numbers).toEqual([1, 2, 3]);
   });
     
   it("should use 'forEach' for simple iteration", function () {
@@ -47,8 +47,8 @@ describe("About Higher Order Functions", function () {
 
     _(numbers).forEach(isEven);
     
-    expect(msg).toEqual("");
-    expect(numbers).toEqual(1, 2, 3);
+    expect(msg).toEqual('falsetruefalse');
+    expect(numbers).toEqual([1, 2, 3]);
   });
     
   it("should use 'all' to test whether all items pass condition", function () {
@@ -71,10 +71,10 @@ describe("About Higher Order Functions", function () {
     expect(_(mixedBag).any(isEven)).toBe(true);
   });
 
-  it("should use range to generate an array", function() { // SEEK HELP
-    expect(_.range(3)).toEqual([0, 1, 2, 3]);
-    expect(_.range(1, 4)).toEqual([1, 2, 3, 4]);
-    expect(_.range(0, -4, -1)).toEqual(FILL_ME_IN); // ???
+  it("should use range to generate an array", function() { // ???
+    expect(_.range(3)).toEqual([0, 1, 2]);
+    expect(_.range(1, 4)).toEqual([1, 2, 3]);
+    expect(_.range(0, -4, -1)).toEqual([0, -1, -2, -3]); // ???
   });
 
   it("should use flatten to make nested arrays easy to work with", function() {
